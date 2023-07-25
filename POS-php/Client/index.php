@@ -1,4 +1,3 @@
 <?php
-echo 'hello';
-echo 'nigga';
+ include "./Front2/buy.php";
 ?>
