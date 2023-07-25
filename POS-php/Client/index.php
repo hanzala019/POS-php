@@ -1,4 +1,4 @@
 <?php
 include './components-h/header.php';
-echo "hello uncle Jami";
+echo "hello uncle Jami!";
 ?>
