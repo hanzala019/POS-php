@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.nav {
+    color: #fafafa;
+    background-color: #262841;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: baseline;
+}
+
+.logo {
+    
+   
+    font-size: 15px;
+}
+
+.link {
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: end;
+    
+}
+.link div {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.login {
+    display: flex;
+    justify-content: center;
+    align-items:baseline;
+}
+
+
+.link div:hover {
+    
+    cursor: pointer;
+    opacity: 0.85;
+}
+
+.bg {
+    background-color: #D9D9D9;
+}
