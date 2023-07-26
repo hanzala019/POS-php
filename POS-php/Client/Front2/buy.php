@@ -8,8 +8,18 @@
 </head>
 <body>
     <div class="diver"  >Fahal</div>
-    <div class="downw">nigga</div>
-    <div class="rig">SUP</div>
+    <div class="downw">
+        <div class="upnigga">nigga
+        <input type="text" class="searchs">
+        <div class="dico">Discount</div>
+        </div>
+        
+        <div class="doyo">yo</div>
+    </div>
+    <div class="rig">
+        <div class="super">SUP</div>
+        <div class="monke">mone</div>
+    </div>
 
 </body>
 </html>
