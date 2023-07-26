@@ -1,8 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 .diver{
     
     color: brown;
     background-color:blue;
-    width: 99%;
+    width: 100%;
     height: 80px;
 }
 .downw{
@@ -17,7 +22,7 @@
     
     color: rgb(109, 109, 106);
      background-color:rgb(0, 255, 110);
-      width: 29%;
+      width: 30%;
        height: 500px;
        float: left;
 
@@ -67,3 +72,34 @@
     height: 30px;
     background-color: cyan;
 }
+/* Style the tab buttons */
+.tablink {
+    background-color: #555;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 25%;
+  }
+  
+  /* Change background color of buttons on hover */
+  .tablink:hover {
+    background-color: #777;
+  }
+  
+  /* Set default styles for tab content */
+  .tabcontent {
+    color: white;
+    display: none;
+    padding: 50px;
+    text-align: center;
+  }
+  
+  /* Style each tab content individually */
+  #London {background-color:red;}
+  #Paris {background-color:green;}
+  #Tokyo {background-color:blue;}
+  #Oslo {background-color:orange;}
