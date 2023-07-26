@@ -1,5 +1,3 @@
 <?php
-
-include './components-h/staff.php';
-
+include './Front2/buy.php';
 ?>
