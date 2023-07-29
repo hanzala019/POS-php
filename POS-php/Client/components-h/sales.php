@@ -1,3 +1,6 @@
+<html>
 <?php
-echo "hello";
+include './header.php';
 ?>
+</body>
+</html>
