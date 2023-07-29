@@ -109,7 +109,12 @@
 .left-content {
     background-color: #BAB6B6;
     padding: 15px;
+    width: 100%;
+    gap: 40px 20px;
     
+}
+.left-content div {
+    width: 20%;
 }
 
 .left-content:nth-child(odd){
@@ -117,7 +122,10 @@
 }
 .left div {
     display: flex;
-    justify-content: space-evenly;
+    text-align: left;
+    justify-content: center;
+    
+    gap: 20px 5px;
     
 }
 
