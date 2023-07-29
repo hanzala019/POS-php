@@ -128,22 +128,46 @@ include './header.php';
         </div>
 
         <div  class="left-content"  style="border: 2px ridge black; color: #fff; margin-top:10ox;">
-            <h2> Name</h2>
-            <h2> Id</h2>
-            <h2> EntryTime</h2>
-            <h2> leavingTime</h2>
-            <h2> CurrentDate</h2>
+
+            <div>
+                <h2> Name</h2>
             </div>
+            <div>
+                <h2> Id</h2>
+            </div>
+            <div>
+                <h2> EntryTime</h2>
+            </div>
+            <div>
+                <h2> leavingTime</h2>
+            </div>
+            <div>
+                <h2>Date</h2>
+            </div>
+            
+        </div>
 
         <?php foreach($AttArr as $staff) : ?>
-            
-            <div  class="left-content" >
-            <h2> <?php echo $staff->name; ?></h2>
-            <h2> <?php echo $staff->id; ?></h2>
-            <h2> <?php echo $staff->EntryTime; ?></h2>
-            <h2> <?php echo $staff->leavingTime; ?></h2>
-            <h2> <?php echo $staff->CurrentDate; ?></h2>
+
+         <div  class="left-content" >
+                            
+            <div>
+                <h2> <?php echo $staff->name; ?></h2>
             </div>
+            <div>
+                 <h2> <?php echo $staff->id; ?></h2>
+            </div>
+            <div>
+                 <h2> <?php echo $staff->EntryTime; ?></h2>
+            </div>
+            <div>
+                <h2> <?php echo $staff->leavingTime; ?></h2>
+            </div>
+            <div>
+                <h2> <?php echo $staff->CurrentDate; ?></h2>
+            </div>
+                  
+         </div>
             
         
         <?php endforeach; ?>
