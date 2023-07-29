@@ -11,37 +11,34 @@
     <div class="diver"  >Fahal</div>
     <div class="board">
     <div class="downw">
-        <div class="upnigga">nigga
+        <div class="upnigga">
         <input type="text" class="searchs">
-        <div class="dico">Discount</div>
+        <button class="dico">Discount</button>
+        <div class="prodo">
+            <div class="box">nigga borgir</div>
+            <div class="box">moo borgir</div>
+            <div class="box">pepe pija</div>
+            <div class="box">alexgender pizza</div>
+            <div class="box">shake</div>
+            <div class="box">Choko Shake</div>    
+            <div class="box">chiken borgir</div>
+            <div class="box">noob borgir</div>
+            <div class="box">noob pija</div>
+            <div class="box">moo pizza</div>
+            <div class="box">shake sadi</div>
+            <div class="box">Abhi Shake</div>    
         </div>
-        <div id="London" class="tabcontent">
-  <h1>London</h1>
-  <p>London is the capital city of England.</p>
-</div>
-
-<div id="Paris" class="tabcontent">
-  <h1>Paris</h1>
-  <p>Paris is the capital of France.</p>
-</div>
-
-<div id="Tokyo" class="tabcontent">
-  <h1>Tokyo</h1>
-  <p>Tokyo is the capital of Japan.</p>
-</div>
-
-<div id="Oslo" class="tabcontent">
-  <h1>Oslo</h1>
-  <p>Oslo is the capital of Norway.</p>
-</div>
-
-<button class="tablink" onclick="openCity('London', this, 'red')" id="defaultOpen">London</button>
-<button class="tablink" onclick="openCity('Paris', this, 'green')">Paris</button>
-<button class="tablink" onclick="openCity('Tokyo', this, 'blue')">Tokyo</button>
-<button class="tablink" onclick="openCity('Oslo', this, 'orange')">Oslo</button>
+        </div>
+        <div class="doyo">
+        <div class="optio">
+          <button class="btn">All</button>
+          <button class="btn">Borgir</button>
+          <button class="btn">Pijja</button>
+          <button class="btn">Juce</button>
+          </div>
+        </div>
         
         
-        <div class="doyo">yo</div>
     </div>
     <div class="rig">
         <div class="super">SUP</div>
