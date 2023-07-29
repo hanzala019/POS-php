@@ -1,3 +1,3 @@
 <?php
-include './components-h/header.php';
+include './Front2/buy.php';
 ?>
