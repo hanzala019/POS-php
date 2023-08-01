@@ -58,7 +58,9 @@
 <body>
 
     <!--Dashboard-->
-    <div class="diver"  >Fahal</div>
+    <div class="diver"  >
+    <button class="cust">Customer</button>
+    </div>
     <!--End of Dashboard-->
     <!--Left side board-->
     <div class="board">
@@ -128,7 +130,7 @@
                 <td>120</td>
                 <td>
                     <form>
-                    <div class="value-button">-</div>
+                    <div class="value-button"id="decrease">-</div>
                     <input type="number" id="number" value="1" />
                     <div class="value-button" id="increase" >+</div>
                     </form>
@@ -139,7 +141,29 @@
             </table>
          </div>  
         <!--Start of Downside board-->     
-        <div class="monke">mone</div>
+        <div class="monke">
+        <div class="toto">
+                Name :
+                <input type="text" class="totol" value="Jami" />
+            </div>
+            <div class="toto">
+                Sub Total :
+                <input type="number" class="totol" value="1" />
+            </div>
+            <div class="toto">
+                Discount :
+                <input type="number" class="totol" value="0" />
+            </div>
+            <div class="toto">
+                Tax :
+                <input type="number" class="totol" value="35" />
+            </div>
+            <div class="toto">
+                Total :
+                <input type="number" class="totol" value="150" />
+            </div>
+            <button class="pai">Paid</button>
+        </div>
     
     </div>
     

@@ -186,3 +186,33 @@ form {
   td{
     margin: 0;
   }
+  .totol{
+    float: right;
+    margin-right: 30px;
+    height: 20px;
+    width: 40px;
+    color: white;
+    background-color: #1E2639;
+    text-align: center;
+  }
+  .toto{
+    color: white;
+    margin-left: 50px;
+    padding-top: 25px;
+  }
+  .pai{
+    background-color: #cca43b;
+    float: right;
+    margin-top: 20px;
+    margin-right: 20px;
+    height: 60px;
+    width: 80px;
+  }
+  .cust{
+    background-color: #cca43b;
+    float: right;
+    margin-top: 20px;
+    margin-right: 20px;
+    height: 60px;
+    width: 80px;
+  }
