@@ -156,8 +156,14 @@
             if(e.target.innerText == '-'){
                 e.target.parentElement.querySelector("input").value--;
             }
+
+            if(e.target.parentElement.querySelector("input").value <= 0){
+              e.target.parentElement.parentElement.parentElement.style.display = 'none';
+            }
             // console.log(e.target.parentElement.querySelector("input"));
         })
+
+        
         
     </script>
 </html>
