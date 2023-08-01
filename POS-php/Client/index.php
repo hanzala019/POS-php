@@ -1,3 +1,5 @@
+<html>
 <?php
-include './components-h/header.php';
+include './components-h/staff.php';
 ?>
+</html>

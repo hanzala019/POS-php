@@ -42,8 +42,8 @@
           }
     }
 
-    $staff1 = new Staff("Md jami","night",50);
-    $staff2 = new Staff("adnan bhai","day",60);
+    $staff1 = new Staff("jami","night",50);
+    $staff2 = new Staff("adnan","day",60);
     $att1 = new Attendence("jami","night",50,"4:02pm","10:11pm");
     $att2 = new Attendence("adnan","day",60,"10:00am","4:05pm");
     $att3 = new Attendence("jami","night",50,"4:11pm","10:10pm");
@@ -56,19 +56,25 @@
     $staffArr = [$staff1,$staff2];
     $AttArr = [$att1,$att2,$att3,$att4,$att5,$att6];
 
+    
+
+  
+
 ?>
 <html>
 <?php
 include './header.php';
 ?>
+<form action="staff.php" method="post" >
 <div class="container">
     <div class="right">
 
+        
         <div >
-            <input type="text" placeholder="E.g Jami weak ">
-            <button> Search</button>
+            <input type="text" placeholder="E.g Jami weak " name="name">
+            <input class="btn" type="submit">
         </div>
-
+    
         <div  class="right-content" style="border: 2px ridge black; color: #333;">
                 <div>
                     <h2> Name</h2>
@@ -86,44 +92,60 @@ include './header.php';
                 
                 
         </div>
-
+        
         <?php foreach($staffArr as $staff) : ?>
-            
+           <?php if($_POST["name"] == ''): ?>
             <div  class="right-content" >
                 <div>
-                    <h2> <?php echo $staff->name; ?></h2>
+                    <h2> <?php echo $staff->name ?></h2>
                 </div>
                 <div>
-                <h2> <?php echo $staff->id; ?></h2>
+                    <h2> <?php echo $staff->id; ?></h2>
                 </div>
                 <div>
-                <h2> <?php echo $staff->shift; ?></h2>
+                    <h2> <?php echo $staff->shift; ?></h2>
                 </div>
                 <div>
-                <h2> <?php echo $staff->salary; ?></h2>
+                    <h2> <?php echo $staff->salary; ?></h2>
                 </div>
-        
             </div>
-            
-        
+          <?php elseif($_POST["name"] == $staff->name): ?>
+                        <div  class="right-content" >
+                <div>
+                    <h2> <?php echo $staff->name ?></h2>
+                </div>
+                <div>
+                    <h2> <?php echo $staff->id; ?></h2>
+                </div>
+                <div>
+                    <h2> <?php echo $staff->shift; ?></h2>
+                </div>
+                <div>
+                    <h2> <?php echo $staff->salary; ?></h2>
+                </div>
+            </div>
+        <?php else: ?>
+            <h1>No Results</h1>
+        <?php endif; ?>
         <?php endforeach; ?>
+        
     </div>
 
     <div class="left">
         <div>
             <select class="select" name="Date" id="date">
-                <option value="today" >Today</option>
-                <option value="week">Week</option>
-                <option value="month">Month</option>
-                <option value="all">All</option>
+                <option value="today" name='today'>Today</option>
+                <option value="week" name='week'>Week</option>
+                <option value="month" name='month'>Month</option>
+                <option value="all" name='all'>All</option>
             </select>
 
             <select class="select" name="Attendence" id="attendence">
-                <option value="all">All</option>
-                <option value="late">Late</option>
-                <option value="early">Early</option>
-                
+                <option value="all" name='all'>All</option>
+                <option value="late" name='late'>Late</option>
+                <option value="early" name='early'>Early</option>    
             </select>
+            
 
         </div>
 
@@ -148,35 +170,60 @@ include './header.php';
         </div>
 
         <?php foreach($AttArr as $staff) : ?>
-
-         <div  class="left-content" >
-                            
-            <div>
-                <h2> <?php echo $staff->name; ?></h2>
-            </div>
-            <div>
-                 <h2> <?php echo $staff->id; ?></h2>
-            </div>
-            <div>
-                 <h2> <?php echo $staff->EntryTime; ?></h2>
-            </div>
-            <div>
-                <h2> <?php echo $staff->leavingTime; ?></h2>
-            </div>
-            <div>
-                <h2> <?php echo $staff->CurrentDate; ?></h2>
-            </div>
-                  
-         </div>
+         <?php if( $_POST["name"] == '' ): ?>
             
-        
+            <div  class="left-content" >
+                                
+                <div>
+                    <h2> <?php echo $staff->name; ?></h2>
+                </div>
+                <div>
+                    <h2> <?php echo $staff->id; ?></h2>
+                </div>
+                <div>
+                    <h2> <?php echo $staff->EntryTime; ?></h2>
+                </div>
+                <div>
+                    <h2> <?php echo $staff->leavingTime; ?></h2>
+                </div>
+                <div>
+                    <h2> <?php echo $staff->CurrentDate; ?></h2>
+                </div>
+                    
+            </div>
+         <?php elseif($_POST["name"] == $staff->name): ?>
+                        <div  class="left-content" >
+                                
+                <div>
+                    <h2> <?php echo $staff->name; ?></h2>
+                </div>
+                <div>
+                    <h2> <?php echo $staff->id; ?></h2>
+                </div>
+                <div>
+                    <h2> <?php echo $staff->EntryTime; ?></h2>
+                </div>
+                <div>
+                    <h2> <?php echo $staff->leavingTime; ?></h2>
+                </div>
+                <div>
+                    <h2> <?php echo $staff->CurrentDate; ?></h2>
+                </div>
+                    
+            </div>
+         <?php endif; ?>
         <?php endforeach; ?>
-    
+            
     </div>
-</div>
-
-
-
+ </div>        
+</form>
 </body>
+
+<script>
+
+    
+
+</script>
+
 </html>
 

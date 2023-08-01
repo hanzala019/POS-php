@@ -73,7 +73,7 @@
     border: none;
     padding: 13px;
 }
-.right div button {
+.right div .btn {
     background-color: #534A4A;
     padding-left: 20px;
     padding-right: 20px;

@@ -56,25 +56,7 @@
     <script ><?php include "func.js" ?></script>
 </head>
 <body>
-<script>
-                        function increaseValue(ev) 
-                        {
-                            console.log(ev)
-                        var value = parseInt(document.getElementById('number').value, 10);
-                        value = isNaN(value) ? 0 : value;
-                        value++;
-                        document.getElementById('number').value = value;
-                        }
 
-                        function decreaseValue() 
-                        {
-                        var value = parseInt(document.getElementById('number').value, 10);
-                        value = isNaN(value) ? 0 : value;
-                        value < 1 ? value = 1 : '';
-                        value--;
-                        document.getElementById('number').value = value;
-                        }
-                    </script>
     <!--Dashboard-->
     <div class="diver"  >Fahal</div>
     <!--End of Dashboard-->
@@ -133,9 +115,9 @@
                 <td>150</td>
                 <td>
                     <form>
-                    <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
+                    <div class="value-button" id="decrease" >-</div>
                     <input type="number" id="number" value="1" />
-                    <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
+                    <div class="value-button" id="increase" >+</div>
                     </form>
                     
                 </td>
@@ -146,9 +128,9 @@
                 <td>120</td>
                 <td>
                     <form>
-                    <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
+                    <div class="value-button">-</div>
                     <input type="number" id="number" value="1" />
-                    <div class="value-button" id="increase" onclick="increaseValue('ev')" value="Increase Value">+</div>
+                    <div class="value-button" id="increase" >+</div>
                     </form>
                    
                 </td>
@@ -163,4 +145,19 @@
     
 
 </body>
+    <script>
+        const table = document.querySelector(".ninn");
+        console.log(table.children[0].children)
+        table.addEventListener('click', function(e){
+            
+            if(e.target.innerText == '+'){
+                e.target.parentElement.querySelector("input").value++;
+            } 
+            if(e.target.innerText == '-'){
+                e.target.parentElement.querySelector("input").value--;
+            }
+            // console.log(e.target.parentElement.querySelector("input"));
+        })
+        
+    </script>
 </html>
