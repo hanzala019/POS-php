@@ -147,7 +147,7 @@
 </body>
     <script>
         const table = document.querySelector(".ninn");
-        console.log(table.children[0].children)
+        
         table.addEventListener('click', function(e){
             
             if(e.target.innerText == '+'){
