@@ -1,3 +1,3 @@
 <?php
-include './Front2/buy.php';
+include './Front2/Product.php';
 ?>

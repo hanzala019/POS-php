@@ -103,4 +103,14 @@
 
 // end of sales.php related classes
 
+// connection to db
+
+$pdo = new PDO('mysql:host=localhost;port=3306;dbname=POS', 'root', '');
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+$result = $pdo->prepare('SELECT * FROM transaction');
+$result->execute();
+
+$transactions = $result->fetchAll(PDO::FETCH_OBJ);
+
 ?>

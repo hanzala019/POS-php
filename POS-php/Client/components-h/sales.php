@@ -5,10 +5,10 @@
 
      if(isset($_POST["name"]) && $_POST["name"] !='' ) {
         $count = 0;
-        for($i = 0; $i< sizeof($prarr); $i++){
-            if($_POST["name"] == $prarr[$i]->name){
-                $prarr[$i]->TotalSales += $prarr[$i]->quantity; 
-                $count += $prarr[$i]->quantity;
+        for($i = 0; $i< sizeof($transactions); $i++){
+            if($_POST["name"] == $transactions[$i]->Name){
+                
+                $count += $transactions[$i]->Quantity;
                 $index = $i;
             } 
         }
@@ -28,7 +28,7 @@
             );
         }
        
-
+  
 ?>
 
 <?php
@@ -62,7 +62,7 @@ include './header.php';
                 
         </div>
         
-        <?php foreach($prarr as $staff) : ?>
+        <?php foreach($transactions as $staff) : ?>
             <?php if(empty($_POST["name"])): ?>
                 <div  class="right-content" >
                     
@@ -72,20 +72,20 @@ include './header.php';
                     
                 </div>
            <?php break; endif; ?>
-          <?php if($_POST["name"] == $staff->name): ?>
+          <?php if($_POST["name"] == $staff->Name): ?>
                         <div  class="right-content" >
                 <div>
-                    <h3> <?php echo $staff->name ?></h3>
+                    <h3> <?php echo $staff->Name ?></h3>
                 </div>
                 <div>
-                    <h3> <?php echo $staff->id; ?></h3>
+                    <h3> <?php echo $staff->Id; ?></h3>
                 </div>
        
                 <div>
-                    <h3> <?php echo $staff->price; ?></h3>
+                    <h3> <?php echo $staff->Price; ?></h3>
                 </div>
                 <div>
-                    <h3> <?php echo $staff->transactionId; ?></h3>
+                    <h3> <?php echo $staff->TransactionId; ?></h3>
                 </div>
 
             </div>
@@ -140,53 +140,53 @@ include './header.php';
             
         </div>
 
-        <?php foreach($prarr as $staff) : ?>
+        <?php foreach($transactions as $staff) : ?>
          <?php if(empty($_POST["name"])): ?>
             
             <div  class="left-content" >
                                 
                 <div>
-                    <h3> <?php echo $staff->name; ?></h3>
+                    <h3> <?php echo $staff->Name; ?></h3>
                 </div>
                 <div>
-                    <h3> <?php echo $staff->id; ?></h3>
+                    <h3> <?php echo $staff->Id; ?></h3>
                 </div>
                 <div>
-                    <h3> <?php echo $staff->quantity; ?></h3>
+                    <h3> <?php echo $staff->Quantity; ?></h3>
                 </div>
                 <div>
-                    <h3> <?php echo $staff->price; ?></h3>
+                    <h3> <?php echo $staff->Price; ?></h3>
                 </div>
                 <div>
-                    <h3> <?php echo $staff->transactionId; ?></h3>
+                    <h3> <?php echo $staff->TransactionId; ?></h3>
                 </div>
 
                 <div>
-                    <h3> <?php echo $staff->date; ?></h3>
+                    <h3> <?php echo $staff->Date; ?></h3>
                 </div>
                     
             </div>
-         <?php elseif($_POST["name"] == $staff->name): ?>
+         <?php elseif($_POST["name"] == $staff->Name): ?>
                         <div  class="left-content" >
                                 
                 <div>
-                    <h3> <?php echo $staff->name; ?></h3>
+                    <h3> <?php echo $staff->Name; ?></h3>
                 </div>
                 <div>
-                    <h3> <?php echo $staff->id; ?></h3>
+                    <h3> <?php echo $staff->Id; ?></h3>
                 </div>
                 <div>
-                    <h3> <?php echo $staff->quantity; ?></h3>
+                    <h3> <?php echo $staff->Quantity; ?></h3>
                 </div>
                 <div>
-                    <h3> <?php echo $staff->price; ?></h3>
+                    <h3> <?php echo $staff->Price; ?></h3>
                 </div>
                 <div>
-                    <h3> <?php echo $staff->transactionId; ?></h3>
+                    <h3> <?php echo $staff->TransactionId; ?></h3>
                 </div>
 
                 <div>
-                    <h3> <?php echo $staff->date; ?></h3>
+                    <h3> <?php echo $staff->Date; ?></h3>
                 </div>
                     
             </div>
