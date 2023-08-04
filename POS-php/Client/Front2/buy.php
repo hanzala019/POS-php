@@ -40,10 +40,9 @@
     $pr11 = new Product("Noob Shake",40,30,"Shake");
     $pr12 = new Product("straw SHake ",40,70,"Shake");
     
-
-    $prarr = [$pr1,$pr2,$pr3,$pr4,$pr5,$pr6,$pr7,$pr8,$pr9,$pr10,$pr11,$pr12];
+$pr13=new Product($_POST["prname"],$_POST["quan"],$_POST["price"],$_POST["type"]);
+    $prarr = [$pr1,$pr2,$pr3,$pr4,$pr5,$pr6,$pr7,$pr8,$pr9,$pr10,$pr11,$pr12,$pr13];
    
-
 ?>
 <!--End of Product Function-->
 <!DOCTYPE html>
