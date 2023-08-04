@@ -1,63 +1,6 @@
-<?php class Staff {
-    public $name;
-    public $id;
-    public $shift;
-    public $salary;
+<?php include './classes.php';
     
-    public function randomNumGen(){
-       
-       
-            $ranStr = rand(10000, 99999);
-        
-        return $ranStr;
-    }
-
-    function __construct($name,$shift,$salary) {
-        $this->name = $name;
-        $this->id = $this->randomNumGen();
-        $this->shift = $shift;
-        $this->salary = $salary;
-
-       
-      }
-
-    }
-
-    class Attendence extends Staff {
-        public $CurrentDate;
-        public $EntryTime;
-        public $leavingTime;
-
-        function __construct($name,$shift,$salary, $EntryTime,$leavingTime) {
-            $this->CurrentDate = date('d/m/Y'); 
-            $this->EntryTime = $EntryTime;
-            $this->leavingTime = $leavingTime;
-
-            // if($shift == 'day') {
-            //     $EntryTime = "9:00am";
-            //     $leavingTime = "3:00pm";
-            // }
-    
-            parent::__construct($name,$shift,$salary);
-          }
-    }
-
-    $staff1 = new Staff("jami","night",50);
-    $staff2 = new Staff("adnan","day",60);
-    $att1 = new Attendence("jami","night",50,"4:02pm","10:11pm");
-    $att2 = new Attendence("adnan","day",60,"10:00am","4:05pm");
-    $att3 = new Attendence("jami","night",50,"4:11pm","10:10pm");
-    $att4 = new Attendence("adnan","day",60,"10:04am","4:00pm");
-    $att5 = new Attendence("jami","night",50,"3:57pm","10:04pm");
-    $att6 = new Attendence("adnan","day",60,"10:00am","4:01pm");
-    $att1->id = $att3->id = $att5->id =  $staff1->id;
-    $att2->id = $att4->id = $att6->id =  $staff2->id;
-
-    $staffArr = [$staff1,$staff2];
-    $AttArr = [$att1,$att2,$att3,$att4,$att5,$att6];
-
-    
-
+    $notEmpty = 0;
   
 
 ?>
@@ -94,7 +37,7 @@ include './header.php';
         </div>
         
         <?php foreach($staffArr as $staff) : ?>
-           <?php if($_POST["name"] == ''): ?>
+           <?php if(empty($_POST["name"])): ?>
             <div  class="right-content" >
                 <div>
                     <h2> <?php echo $staff->name ?></h2>
@@ -110,9 +53,11 @@ include './header.php';
                 </div>
             </div>
           <?php elseif($_POST["name"] == $staff->name): ?>
+            <?php $notEmpty = 1; ?>
                         <div  class="right-content" >
                 <div>
-                    <h2> <?php echo $staff->name ?></h2>
+                   <h1>  <?php echo $notEmpty?> </h1>
+                  
                 </div>
                 <div>
                     <h2> <?php echo $staff->id; ?></h2>
@@ -124,11 +69,12 @@ include './header.php';
                     <h2> <?php echo $staff->salary; ?></h2>
                 </div>
             </div>
-        <?php else: ?>
-            <h1>No Results</h1>
-        <?php endif; ?>
+            <?php endif; ?>
+       
         <?php endforeach; ?>
-        
+        <?php if(isset($_POST["name"]) && $_POST["name"] !='' && $notEmpty == 0): ?>
+            <h1 style="text-align: center; margin-top: 100px; color: Crimson;">No Results Found !</h1>
+        <?php endif; ?>
     </div>
 
     <div class="left">
@@ -170,7 +116,7 @@ include './header.php';
         </div>
 
         <?php foreach($AttArr as $staff) : ?>
-         <?php if( $_POST["name"] == '' ): ?>
+         <?php if(empty($_POST["name"])): ?>
             
             <div  class="left-content" >
                                 

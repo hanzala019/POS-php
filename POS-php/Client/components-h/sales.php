@@ -1,40 +1,4 @@
-<?php 
-        class Transaction {
-            public $name;
-            public $id;
-            public $types;
-            public $quantity;
-            public $price;
-            public $transactionId;
-            public $date;
-            public $TotalSales = 0;
-
-            function __construct($name,$quantity,$price,$types,$id) {
-                $this->name = $name;
-                $this->id = $id;
-                $this->quantity = $quantity;
-                $this->price = $price;
-                $this->types = $types;
-                $this->transactionId =  $ranStr = rand(100000, 999999);
-                $this->date = date('d/m/Y');
-              }
-        }
-
-        $pr1 = new Transaction("Chesse burger",5,200,"Burger",11111);
-        $pr2 = new Transaction("Beef burger",4,120,"Burger",11110);
-        $pr3 = new Transaction("Chesse burger",3,200,"Burger",11111);
-        $pr4 = new Transaction("Chicken burger",2,180,"Burger",11113);
-        $pr5 = new Transaction("Chesse Pizza",1,800,"Pizza",11114);
-        $pr6 = new Transaction("Chicken Pizza",4,900,"Pizza",11115);
-        $pr7 = new Transaction("Chicken Pizza",1,900,"Pizza",11115);
-        $pr8 = new Transaction("Mexican Pizza",4,700,"Pizza",11117);
-        $pr9 = new Transaction("Chocolate Shake",5,60,"Shake",11118);
-        $pr10 = new Transaction("Vanilla Shake ",4,70,"Shake",11119);
-        $pr11 = new Transaction("Chocolate Shake",1,60,"Shake",11118);
-        $pr12 = new Transaction("straw Shake ",6,70,"Shake",11121);
-        
-    
-        $prarr = [$pr1,$pr2,$pr3,$pr4,$pr5,$pr6,$pr7,$pr8,$pr9,$pr10,$pr11,$pr12];
+<?php include './classes.php';
 
         $dataPoints = [];
         $index = 0;
@@ -52,7 +16,7 @@
             array("y" => $count, "label" => $_POST["name"] ));
      }
 
-        elseif(isset($_POST["name"]) && $_POST["name"] == '') {
+        elseif(empty($_POST["name"])) {
             $dataPoints = array( 
                 array("y" => $pr1->quantity, "label" => $pr1->name ),
                 array("y"  => $pr2->quantity, "label" => $pr2->name ),
@@ -99,7 +63,7 @@ include './header.php';
         </div>
         
         <?php foreach($prarr as $staff) : ?>
-            <?php if($_POST["name"] == ''): ?>
+            <?php if(empty($_POST["name"])): ?>
                 <div  class="right-content" >
                     
                         <h2>
@@ -177,7 +141,7 @@ include './header.php';
         </div>
 
         <?php foreach($prarr as $staff) : ?>
-         <?php if( $_POST["name"] == '' ): ?>
+         <?php if(empty($_POST["name"])): ?>
             
             <div  class="left-content" >
                                 
