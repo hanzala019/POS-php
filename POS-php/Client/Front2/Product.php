@@ -37,7 +37,8 @@
             return false;
         }
      if($_SERVER['REQUEST_METHOD']=="POST"){
-            $query="insert into product (Name , Types,Quantity,Price) values (:Name,:Types,:Quantity,:Price)";
+            $_POST['Id']= rand(10000, 99999);
+            $query="insert into product (Name , Types,Quantity,Price,Id) values (:Name,:Types,:Quantity,:Price,:Id)";
             query($query,$_POST);
      }
     ?>
