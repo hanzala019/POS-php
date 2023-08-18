@@ -15,13 +15,13 @@
 
   <div class="link">
       <div id="dashboard">
-        <h1 >  Dashboard</a></h1>
+        <h1 > <a href="./dashboard.php"> Dashboard</a></h1>
       </div>
       <div id="staff">
-        <h1 > Staff</h1>
+      <h1 > <a href="./staff.php"> Staff</a></h1>
       </div>
       <div id="sales">
-        <h1 >   Sales</h1>
+      <h1 > <a href="./sales.php"> Sales</a></h1>
       </div>
   </div>
 
@@ -31,26 +31,3 @@
     </div>
   </div>
 </div>
-
-<script>
-  const salesBtn = document.querySelector("#sales");
-  const dashboardBtn = document.querySelector("#dashboard");
-  const staffBtn  = document.querySelector("#staff");
-
-  let salesPage = false;
-  let dashboardPage = false;
-  let staffPage = false;
-
-  salesBtn.addEventListener("click", ()=>{
-  let salesPage = true;
-  let dashboardPage = false;
-  let staffPage = false;
-  
-  salesBtn.style.backgroundColor = "red";
-
-  })
-
-
-</script>
-  
-  

@@ -56,7 +56,7 @@ include './header.php';
             <?php $notEmpty = 1; ?>
                         <div  class="right-content" >
                 <div>
-                   <h1>  <?php echo $notEmpty?> </h1>
+                   <h1>  <?php echo $staff->name?> </h1>
                   
                 </div>
                 <div>

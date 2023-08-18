@@ -26,6 +26,10 @@
     align-items: end;
     
 }
+.link a {
+    text-decoration: none;
+    color: #fafafa;
+}
 .link div {
     padding-left: 5px;
     padding-right: 5px;
@@ -34,6 +38,10 @@
     display: flex;
     justify-content: center;
     align-items:baseline;
+}
+.login div:hover {
+    cursor: pointer;
+    opacity: 0.85;
 }
 
 
@@ -137,3 +145,24 @@
     border: none;
     padding: 13px;
 }
+
+.header-list{
+    display: flex;
+    margin-left: 20%;
+    width: 60%;
+    align-items: center;
+    
+    
+}
+.header-list div{
+    width: 10%;
+    font-size: 20px;
+    color: #a09b9b;
+    
+}
+.header-list div:hover {
+    cursor: pointer;
+    color:#FFFFFF;
+    opacity: 0.85;
+}
+
