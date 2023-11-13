@@ -7,40 +7,15 @@
     <style><?php include "style.css" ?> </style>
     <?php
     
-        function Db_connect(){
-                $DBHOST="localhost";
-                $DBNAME="pos";
-                $DBUSER ="root";
-                $DBPASS="";
-                $DBDRIVER="mysql";
-                try {
-                    $conn = new PDO("$DBDRIVER:host=$DBHOST;dbname=$DBNAME", $DBUSER, $DBPASS);
-                    // set the PDO error mode to exception
-                    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                    //echo "Connected successfully";
-                    return $conn;
-                  } catch(PDOException $e) {
-                    echo "Connection failed: " . $e->getMessage();
-                  }
-
-        }  
-        function query($query,$data=array()){
-            $con=  Db_connect();
-            $stl = $con->prepare($query);
-            $check = $stl->execute($data);
-            if($check){
-                $result=$stl->fetchAll(PDO::FETCH_ASSOC);
-                if (is_array($result) && count($result)>0){
-                   return $result;
-                }
-            }
-            return false;
-        }
+      include 'func.php';
+      $error=[];
      if($_SERVER['REQUEST_METHOD']=="POST"){
             $_POST['Id']= rand(10000, 99999);
-            $query="insert into product (Name , Types,Quantity,Price,Id) values (:Name,:Types,:Quantity,:Price,:Id)";
-            query($query,$_POST);
+            $error = validate($_POST,'product');
+            if(empty($error)){
+            insert($_POST,'product');
      }
+    }
     ?>
     
 </head>
@@ -56,11 +31,15 @@
 <div>
 <label for="name">Product Name</label>
     <input type="text" id="fname" name="Name" placeholder="Product name">
+    <?php if(!empty($error['Name'])):?>
+        <small><?= $error['Name']?></small><?php endif;?>
 </div>
     
 <div>
 <label for="tname">Type</label>
     <input type="text" id="tname" name="Types" placeholder="Type">
+    <?php if(!empty($error['Types'])):?>
+        <small><?= $error['Types']?></small><?php endif;?>
 </div>
     
 

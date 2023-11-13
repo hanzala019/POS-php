@@ -1,6 +1,7 @@
 <!--Buyers Dashboard-->
 <!--Product Function-->
 <?php class Product {
+     
     public $name;
     public $id;
     public $types;
@@ -26,23 +27,10 @@
       }
 
     }
-
-    $pr1 = new Product("Nigga burger",50,200,"Burger");
-    $pr2 = new Product("Moo burger",40,120,"Burger");
-    $pr3 = new Product("Noob burger",50,100,"Burger");
-    $pr4 = new Product("chikne burger",40,180,"Burger");
-    $pr5 = new Product("choko Pizza",40,1800,"Pizza");
-    $pr6 = new Product("moo Pizza",40,1900,"Pizza");
-    $pr7 = new Product("pepe Pizza",40,800,"Pizza");
-    $pr8 = new Product("mojo Pizza",40,700,"Pizza");
-    $pr9 = new Product("SHake Sadi",40,60,"Shake");
-    $pr10 = new Product("moo SHake ",40,70,"Shake");
-    $pr11 = new Product("Noob Shake",40,30,"Shake");
-    $pr12 = new Product("straw SHake ",40,70,"Shake");
+    include 'func.php';
     
-$pr13=new Product($_POST["prname"],$_POST["quan"],$_POST["price"],$_POST["type"]);
-    $prarr = [$pr1,$pr2,$pr3,$pr4,$pr5,$pr6,$pr7,$pr8,$pr9,$pr10,$pr11,$pr12,$pr13];
-   
+    
+    
 ?>
 <!--End of Product Function-->
 <!DOCTYPE html>
@@ -52,9 +40,10 @@ $pr13=new Product($_POST["prname"],$_POST["quan"],$_POST["price"],$_POST["type"]
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style><?php include "style.css" ?> </style>
-    <script ><?php include "func.js" ?></script>
+    
 </head>
 <body>
+    
 
     <!--Dashboard-->
     <div class="diver"  >
@@ -65,6 +54,7 @@ $pr13=new Product($_POST["prname"],$_POST["quan"],$_POST["price"],$_POST["type"]
     <div class="board">
      <!--Left side Sub board-->   
     <div class="downw">
+        
         <!--Product list board-->
         <div class="upnigga">
         <!--Search Bar-->
@@ -73,12 +63,7 @@ $pr13=new Product($_POST["prname"],$_POST["quan"],$_POST["price"],$_POST["type"]
         <button class="dico">Discount</button>
         <!--List of Product-->
         <div class="prodo">
-            <?php foreach($prarr as $pr ) :?>
-
-            <button class="box"><p> <?php echo $pr->name; ?></p>
-        <p><?php echo $pr->price; ?></p>
-            </button>
-    <?php endforeach; ?>
+            
         </div>
         <!--End ofList of Product-->
         </div>
@@ -111,6 +96,7 @@ $pr13=new Product($_POST["prname"],$_POST["quan"],$_POST["price"],$_POST["type"]
                 <th>Quantity</th>
                 <th>Total</th>
             </tr>
+            <tbody>
             <tr>
                 <td>Nigga Burger</td>
                 <td>150</td>
@@ -124,19 +110,8 @@ $pr13=new Product($_POST["prname"],$_POST["quan"],$_POST["price"],$_POST["type"]
                 </td>
                 <td>150</td>
             </tr>
-            <tr>
-                <td>Moo Burger</td>
-                <td>120</td>
-                <td>
-                    <form>
-                    <div class="value-button"id="decrease">-</div>
-                    <input type="number" id="number" value="1" />
-                    <div class="value-button" id="increase" >+</div>
-                    </form>
-                   
-                </td>
-                <td>120</td>
-            </tr>
+            
+            </tbody>
             </table>
          </div>  
         <!--Start of Downside board-->     
@@ -169,6 +144,40 @@ $pr13=new Product($_POST["prname"],$_POST["quan"],$_POST["price"],$_POST["type"]
 
 </body>
     <script>
+        function get_data(){
+            var ajax = new XMLHttpRequest();
+
+          ajax.addEventListener('readystatechange',function(e){
+            if(ajax.readyState){
+                handle_result(ajax.responseText);
+            }
+          });
+          ajax.open('post','ajax.php',true);
+          ajax.send();
+        }
+
+        function handle_result(result){
+
+            //sizeOfJSONArrayString = new JSONArray(result).length();
+            var obj = JSON.parse(result);
+            var mydiv =document.querySelector(".prodo");
+            
+           if (typeof obj != "undefined"){
+            
+                for(var i = 0;i<5;i++){
+                    mydiv.innerHTML +=obj[i].Name + "<br>";
+                }
+            }
+           
+            //mydiv.innerHTML =sizeOfJSONArrayString; 
+
+        }
+
+
+          function add_item()
+    {
+          
+      }
         const table = document.querySelector(".ninn");
         
         table.addEventListener('click', function(e){
@@ -186,7 +195,7 @@ $pr13=new Product($_POST["prname"],$_POST["quan"],$_POST["price"],$_POST["type"]
             // console.log(e.target.parentElement.querySelector("input"));
         })
 
-        
+        get_data();
         
     </script>
 </html>
